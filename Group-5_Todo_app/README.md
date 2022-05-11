@@ -1,0 +1,1 @@
+A simple Todo application that reads json data and display it in a nice, awesome view

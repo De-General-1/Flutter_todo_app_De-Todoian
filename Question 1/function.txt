@@ -1,0 +1,14 @@
+CREATE OR REPLACE FUNCTION calc_outstanding_feeS(studentid integer)
+RETURNS table (j json) AS $$
+DECLARE
+outstandingfee integer;
+BEGIN 
+
+SELECT sum(amount-amont_paid) INTO outstandingfee FROM student_fees WHERE student_fees.student_id=studentid;
+	UPDATE student_fees
+	SET outstanding_fee = outstandingfee
+	WHERE student_fees.student_id=studentid;
+RETURN QUERY SELECT row_to_json(row(student_id,outstanding_fee))FROM student_fees;
+END;
+
+$$ LANGUAGE plpgsql;

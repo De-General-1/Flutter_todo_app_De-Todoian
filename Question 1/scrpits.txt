@@ -1,0 +1,32 @@
+*Script for calling the function* 
+SELECT public.calc_outstanding_feeS(10889231)
+
+*Script for creating tables and inserting values into them*
+CREATE TABLE course_enrollment
+INSERT INTO course_enrollment VALUES()
+SELECT course_id, course_name, lecturer_id
+	FROM public.course_enrollment;
+
+CREATE TABLE course_ta
+INSERT INTO course_ta VALUES()
+SELECT "TA_id", lecturer_id, course_id, "TA_name"
+	FROM public.course_ta;
+
+CREATE TABLE lecturer
+INSERT INTO lecturer VALUES()
+SELECT lecturer_id, lecturer_name, course_id
+	FROM public.lecturer;
+
+
+SELECT row_to_json
+	FROM public.row_to_json;
+
+CREATE TABLE student
+INSERT INTO student VALUES()
+SELECT student_id, first_name, last_name, student_course, student_contact, student_age
+	FROM public.student;
+
+CREATE TABLE student_fees
+INSERT INTO student_fees VALUES()
+SELECT payment_id, amount, amont_paid, student_id, outstanding_fee
+	FROM public.student_fees;
